@@ -1,8 +1,8 @@
 {
   "name": "Cap Share Target",
   "short_name": "CapShare",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/capawesome-share-target-pwa/",
+  "scope": "/capawesome-share-target-pwa/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#317EFB",
