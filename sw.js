@@ -72,7 +72,7 @@ async function handleShareTarget(request) {
       }
     }
 
-    const redirectUrl = new URL('/capawesome-share-target-pwa/#/home', self.location.origin);
+    const redirectUrl = new URL('/capawesome-share-target-pwa/', self.location.origin);
 
     if (shareData.title) {
       redirectUrl.searchParams.set('title', shareData.title);
@@ -93,6 +93,6 @@ async function handleShareTarget(request) {
     return Response.redirect(redirectUrl.href, 303);
   } catch (error) {
     console.error('Error handling share target:', error);
-    return Response.redirect('/capawesome-share-target-pwa/#/home', 303);
+    return Response.redirect('/capawesome-share-target-pwa/', 303);
   }
 }
