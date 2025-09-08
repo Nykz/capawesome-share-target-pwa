@@ -1,7 +1,7 @@
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
-  if (event.request.method === 'POST' && url.pathname === '_share-target') {
+  if (event.request.method === 'POST' && url.pathname === '/capawesome-share-target-pwa/_share-target') {
     event.respondWith(handleShareTarget(event.request));
   } else if (url.pathname.startsWith('/_share-file/')) {
     event.respondWith(handleFileRequest(event.request));
@@ -72,7 +72,7 @@ async function handleShareTarget(request) {
       }
     }
 
-    const redirectUrl = new URL('/', self.location.origin);
+    const redirectUrl = new URL('/capawesome-share-target-pwa/#/home', self.location.origin);
 
     if (shareData.title) {
       redirectUrl.searchParams.set('title', shareData.title);
@@ -93,6 +93,6 @@ async function handleShareTarget(request) {
     return Response.redirect(redirectUrl.href, 303);
   } catch (error) {
     console.error('Error handling share target:', error);
-    return Response.redirect('/', 303);
+    return Response.redirect('/capawesome-share-target-pwa/#/home', 303);
   }
 }
