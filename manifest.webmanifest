@@ -6,12 +6,8 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#317EFB",
-  "icons": [
-    { "src": "assets/icon/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "assets/icon/icon-512.png", "sizes": "512x512", "type": "image/png" }
-  ],
   "share_target": {
-    "action": "/_share-target",
+    "action": "_share-target",
     "method": "POST",
     "enctype": "multipart/form-data",
     "params": {

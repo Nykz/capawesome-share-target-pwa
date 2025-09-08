@@ -1,7 +1,7 @@
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
-  if (event.request.method === 'POST' && url.pathname === '/_share-target') {
+  if (event.request.method === 'POST' && url.pathname === '_share-target') {
     event.respondWith(handleShareTarget(event.request));
   } else if (url.pathname.startsWith('/_share-file/')) {
     event.respondWith(handleFileRequest(event.request));
