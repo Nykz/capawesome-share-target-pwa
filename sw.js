@@ -3,7 +3,7 @@ self.addEventListener('fetch', event => {
 
   if (event.request.method === 'POST' && url.pathname === '/capawesome-share-target-pwa/_share-target') {
     event.respondWith(handleShareTarget(event.request));
-  } else if (url.pathname.startsWith('/_share-file/')) {
+  } else if (url.pathname.startsWith('/capawesome-share-target-pwa/_share-file/')) {
     event.respondWith(handleFileRequest(event.request));
   }
 });
@@ -63,7 +63,7 @@ async function handleShareTarget(request) {
           });
           await cache.put(cacheKey, response);
 
-          fileUrls.push(`/_share-file/${fileId}`);
+          fileUrls.push(`/capawesome-share-target-pwa/_share-file/${fileId}`);
         }
       }
 
